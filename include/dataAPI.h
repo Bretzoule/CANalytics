@@ -32,6 +32,18 @@
 #define DATA_METHOD "3"
 
 /*!
+ *  \enum method
+ *  \brief Enum for method
+ */
+
+enum method
+{
+    timestamp = 1,  /*!< timestamp method */
+    identifier = 2, /*!< identifier method */
+    data = 3        /*!< data method */
+};
+
+/*!
  *  \struct dataStructure
  *  \author LEFLOCH Thomas <leflochtho@eisti.eu>
  *  \version 0.1
@@ -40,7 +52,6 @@
  *  \param
  *  \remarks
  */
-
 typedef struct dataStruct
 {
     long timestamp_sec;
@@ -49,6 +60,5 @@ typedef struct dataStruct
     int dlc;
     char *data;
 } dataStruct;
-
 
 #endif

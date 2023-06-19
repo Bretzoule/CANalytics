@@ -13,19 +13,8 @@
 
 #define LINE_MAX 1024
 
-
 char line[LINE_MAX];
 
-/*!
- *  \fn void explode(char *srcStr)
- *  \author LEFLOCH Thomas <leflochtho@eisti.eu>
- *  \version 0.1
- *  \date Sam 17 Juin 2023 - 14:42:05
- *  \brief explode a string into a datastruct element
- *  \param
- *  \return
- *  \remarks
- */
 void explode(char *srcStr, dataStruct *data)
 {
     char *tok;
@@ -58,15 +47,20 @@ void explode(char *srcStr, dataStruct *data)
 
 void parseFile(int method, FILE *fileHandler)
 {
-    dataStruct *dataArray;
+    dataStruct *dataArray = NULL;
     int fileLength = 0;
     while (fgets(line, LINE_MAX, fileHandler) != NULL)
     {
-        fileLength++;
-        dataArray = realloc(dataArray, sizeof(dataStruct) * (fileLength));
+        dataArray = realloc(dataArray, sizeof(dataStruct) * (fileLength + 1));
         dataStruct data;
         explode(line, &data);
         dataArray[fileLength] = data;
+        fileLength++;
     }
-    handleAnalyseFieldAndMethod(method, dataArray);
+    handleAnalyseFieldAndMethod(method, dataArray, fileLength);
+    for (int i = 0; i < fileLength; i++)
+    {
+        free(dataArray[i].data);
+    }
+    free(dataArray);
 }

@@ -46,7 +46,7 @@ int main(int argc, char **argv)
   }
   else
   {
-    printf("Paramètres invalides -- Method: %d, FileHandler: %d\n", method, fileHandler);
+    printf("Paramètres invalides -- Method: %d\n", method);
     return ERREUR_SAISIE;
   }
   fclose(fileHandler);

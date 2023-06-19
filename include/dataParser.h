@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "analyser.h"
 #include "dataAPI.h"
 /*!
  \def EXIT_SUCCESS
@@ -26,6 +27,18 @@
  \brief Exit code stating that an error occured
 */
 #define ERREUR_SAISIE -1
+
+/*!
+ *  \fn void explode(char *srcStr)
+ *  \author LEFLOCH Thomas <leflochtho@eisti.eu>
+ *  \version 0.1
+ *  \date Sam 17 Juin 2023 - 14:42:05
+ *  \brief explode a string into a datastruct element
+ *  \param srcStr : string to explode
+ *  \param data : pointer to the dataStruct to be filled
+ *  \remarks
+ */
+void explode(char *srcStr, dataStruct *data);
 
 /*!
  *  \fn void parseFile(int method, FILE *fileHandler)
