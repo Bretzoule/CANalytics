@@ -54,7 +54,7 @@ enum method
  */
 typedef struct dataStruct
 {
-    long timestamp_sec;
+    double timestamp_sec;
     char id[4];
     int rtr;
     int dlc;

@@ -2,5 +2,4 @@
 
 set -x
 
-gnuplot -p -e "plot 'neuralNetIterations.dat' using 1:2 with lines"
-gnuplot -p -e "plot 'errorWithNoiseForOne.dat' with lines title 'One', 'errorWithNoiseForZero.dat' with lines title 'Zero'"
+gnuplot -p -e "plot 'outputTimeStamp.txt' with  impulses lw 2 title 'Ecarts frequence envoi - Attack Free', 0.000438 title 'Moyenne envoi'"

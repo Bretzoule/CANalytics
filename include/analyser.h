@@ -1,6 +1,6 @@
 #ifndef ANALYSER_H
 #define ANALYSER_H
-/*! 
+/*!
  *  \file analyser.h
  *  \author LEFLOCH Thomas <leflochtho@eisti.eu>
  *  \version 0.1
@@ -17,21 +17,19 @@
 #include <math.h>
 #include "dataAPI.h"
 
-/*! 
+/*!
  \def EXIT_SUCCESS
  \brief Exit code confirming program proper execution
 */
 #define EXIT_SUCCESS 0
-/*! 
+/*!
  \def ERREUR_SAISIE
  \brief Exit code stating that an error occured
 */
 #define ERREUR_SAISIE -1
 
-
-
 /*!
- *  \fn float stdDev(float data[], int length)
+ *  \fn float stdDev(double data[], int length)
  *  \author LEFLOCH Thomas <leflochtho@eisti.eu>
  *  \version 0.1
  *  \date Lun 19 Juin 2023 - 19:21:07
@@ -41,7 +39,34 @@
  *  \return the standard deviation of the data array
  *  \remarks
  */
-float stdDev(float data[], int length);
+double stdDev(double data[], int length);
+
+/*!
+ * \fn void computeMaxAndMin(double data[], int length, double *max, double *min)
+ * \author LEFLOCH Thomas <leflochtho@eisti.eu>
+ * \version 0.1
+ * \date Lun 19 Juin 2023 - 19:21:07
+ * \brief Calculate the maximum and minimum of a float array
+ * \param data: the data to analyse
+ * \param length: the length of the data array
+ * \param max: pointer to the maximum value
+ * \param min: pointer to the minimum value
+ * \remarks
+ */
+void computeMaxAndMin(double data[], int length, double *max, double *min);
+
+/*!
+ *  \fn double computeMean(double data[], int length)
+ *  \author LEFLOCH Thomas <leflochtho@eisti.eu>
+ *  \version 0.1
+ *  \date Lun 19 Juin 2023 - 19:21:07
+ *  \brief Calculate the standard deviation of a float array
+ *  \param data: the data to analyse
+ *  \param length: the length of the data array
+ *  \return the standard deviation of the data array
+ *  \remarks
+ */
+double computeMean(double data[], int length);
 
 /*!
  *  \fn void analyseFileByTimestamp(dataStruct *dat, int dataLength)
